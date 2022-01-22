@@ -4,7 +4,6 @@ import { chat } from "./chat.ts";
 serve((req) => {
   const url = new URL(req.url);
   if (req.method === "GET" && url.pathname === "/") {
-    console.log("hehe");
     return new Response(
       Deno.readTextFileSync("./index.html"),
       {
@@ -17,9 +16,7 @@ serve((req) => {
   }
   // WebSockets Chat
   if (req.method === "GET" && url.pathname === "/ws") {
-    console.log("hehei");
     let { response, socket } = Deno.upgradeWebSocket(req);
-    socket
     chat(socket);
     return response;
   }

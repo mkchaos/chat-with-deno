@@ -17,7 +17,7 @@ export function chat(ws: WebSocket): void {
   broadcast(`> User with the id ${userId} is connected`);
   ws.onopen = (e) => {
     ws.send(`welcome, ${userId}`);
-  }
+  };
   ws.onmessage = (e) => {
     const message = camelize(typeof e.data === "string" ? e.data : "");
     // console.log("E: ", e, typeof e);

@@ -2,9 +2,9 @@ import { camelCase } from "./deps.ts";
 
 /**
  * Return the text in camelCase + how many 🐪
- * 
+ *
  * @example "this is an example" -> "thisIsAnExample 🐪🐪🐪"
- * @param text 
+ * @param text
  * @returns {string}
  */
 export function camelize(text: string) {
